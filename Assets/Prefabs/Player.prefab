@@ -185,7 +185,7 @@ MonoBehaviour:
   clickStates: {fileID: 0}
   firstName: 
   sprite: {fileID: 21300000, guid: 47cb1ed0f06237d478edbe759c4dd404, type: 3}
-  lifespan: 3
+  lifespan: 7.68
   lifespanCounter: 0
   lifeSpanSlider: {fileID: 0}
   nameTag: {fileID: 1420160089280865876}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startedClick: 0
-  holdingClick: 0
+  holdingClick: 1
   endedClick: 0
   isAlive: 0
   clickFX: {fileID: 7108591991025362461, guid: d25060fa138a8254ca516232caf35388, type: 3}
