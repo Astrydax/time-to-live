@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 567970680}
   - component: {fileID: 567970681}
   - component: {fileID: 567970683}
+  - component: {fileID: 917930074580321208}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -185,7 +186,7 @@ MonoBehaviour:
   clickStates: {fileID: 0}
   firstName: 
   sprite: {fileID: 21300000, guid: 47cb1ed0f06237d478edbe759c4dd404, type: 3}
-  lifespan: 3
+  lifespan: 7.68
   lifespanCounter: 0
   lifeSpanSlider: {fileID: 0}
   nameTag: {fileID: 1420160089280865876}
@@ -221,6 +222,30 @@ MonoBehaviour:
   endedClick: 0
   isAlive: 0
   clickFX: {fileID: 7108591991025362461, guid: d25060fa138a8254ca516232caf35388, type: 3}
+--- !u!114 &917930074580321208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867666741270801650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cd7a7f0ad8d9e4f831018dba779be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLives: 10
+  lifeImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2375712945273402567
 GameObject:
   m_ObjectHideFlags: 0
