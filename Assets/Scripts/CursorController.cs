@@ -18,6 +18,8 @@ public class CursorController : MonoBehaviour
     public float lifespanCounter;
     public Slider lifeSpanSlider;
 
+    private LifeController lifeController;
+
     
 
 
@@ -47,6 +49,7 @@ public class CursorController : MonoBehaviour
         nameTag.text = name;
         sr.sprite = sprite;
         Cursor.visible = false;
+        lifeController = GetComponent<LifeController>();
 
     }
 
@@ -92,6 +95,10 @@ public class CursorController : MonoBehaviour
 
     private void HandleDeath()
     {
+        lifeController.LoseLife();
+
+        //TODO: check for zero lives
+
 
         PlayerReplayObject[] ghosts = FindObjectsOfType<PlayerReplayObject>();
         foreach (PlayerReplayObject playerReplayObject in ghosts)
