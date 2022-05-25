@@ -23,25 +23,25 @@ public class Recorder : MonoBehaviour
     private void Start()
     {
         // subscribe to events
-        GameEventsManager.instance.onGoalReached += OnGoalReached;
-        GameEventsManager.instance.onRestartLevel += OnRestartLevel;
+        GameEventsManager.instance.onPlayerRespawn += OnPlayerRespawned;
+        GameEventsManager.instance.onRestartGame += OnRestartGame;
     }
 
     private void OnDestroy()
     {
         // unsubscribe from events
-        GameEventsManager.instance.onGoalReached -= OnGoalReached;
-        GameEventsManager.instance.onRestartLevel -= OnRestartLevel;
+        GameEventsManager.instance.onPlayerRespawn -= OnPlayerRespawned;
+        GameEventsManager.instance.onRestartGame -= OnRestartGame;
     }
 
-    private void OnGoalReached()
+    private void OnPlayerRespawned()
     {
         RestartReplay();
         StartReplay();
         
     }
 
-    private void OnRestartLevel()
+    private void OnRestartGame()
     {
         Reset();
     }

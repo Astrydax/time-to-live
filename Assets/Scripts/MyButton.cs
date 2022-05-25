@@ -26,7 +26,7 @@ public class MyButton : MonoBehaviour
         //this is only used for testing, remove before deploy
         if (clicker.GetComponent<ClickStates>().isAlive && testFlag)
         {
-            GameEventsManager.instance.GoalReached();
+            GameEventsManager.instance.PlayerRespawned();
         }
         
 

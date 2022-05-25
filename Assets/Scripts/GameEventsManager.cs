@@ -16,33 +16,25 @@ public class GameEventsManager : MonoBehaviour
         instance = this;
     }
 
-    public event Action onGoalReached;
-
-    public void GoalReached()
-    {
-        if (onGoalReached != null)
-        {
-            onGoalReached();
-        }
-    }
-
-    public event Action onRestartLevel;
-
-    public void RestartLevel()
-    {
-        if (onRestartLevel != null)
-        {
-            onRestartLevel();
-        }
-    }
-
     public event Action onPlayerRespawn;
 
-    public void PlayerRespawn()
+    public void PlayerRespawned()
     {
         if (onPlayerRespawn != null)
         {
             onPlayerRespawn();
         }
     }
+
+    public event Action onRestartGame;
+
+    public void RestartGame()
+    {
+        if (onRestartGame != null)
+        {
+            onRestartGame();
+        }
+    }
+
+    
 }

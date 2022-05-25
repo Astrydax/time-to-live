@@ -22,6 +22,4 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    //git test
-    //testing branch behind master
 }
