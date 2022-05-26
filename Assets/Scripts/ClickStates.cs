@@ -8,7 +8,7 @@ public class ClickStates : MonoBehaviour
 
     public bool isAlive = false;
 
-    private GameObject lastClicked;
+    public ClickableObject lastClicked;
 
     public GameObject clickFX;
 
@@ -24,12 +24,15 @@ public class ClickStates : MonoBehaviour
         
         if (startedClick && lastClicked == null)
         {
-            Debug.Log("You Clicked!");
             RaycastHit2D hit = FireRay();
             if (hit.collider != null)
             {
-                lastClicked = hit.collider.gameObject;
-                hit.collider.gameObject.BroadcastMessage("OnClick", this.gameObject);
+                lastClicked = hit.collider.gameObject.GetComponent<ClickableObject>();
+                if(lastClicked != null)
+                {
+                    lastClicked.OnClick(this.gameObject);
+                }
+                
             }
 
         }
@@ -70,7 +73,8 @@ public class ClickStates : MonoBehaviour
     {
         if (lastClicked != null)
         {
-            lastClicked.BroadcastMessage("OnRelease", this.gameObject);
+            //lastClicked.BroadcastMessage("OnRelease", this.gameObject);
+            lastClicked.OnRelease(this.gameObject);
             lastClicked = null;
         }
     }

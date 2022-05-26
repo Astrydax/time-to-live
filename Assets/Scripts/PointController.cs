@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointController : MonoBehaviour
+public class PointController : ClickableObject
 {
     public GameObject pointEffect;
 
@@ -10,7 +10,7 @@ public class PointController : MonoBehaviour
 
     
 
-    public void OnClick(GameObject clicker)
+    public override void OnClick(GameObject clicker)
     {
         GameManager.instance.collectedPoints += pointValue;
         this.gameObject.SetActive(false);
@@ -19,7 +19,7 @@ public class PointController : MonoBehaviour
 
     }
 
-    public void OnRelease(GameObject clicker)
+    public override void OnRelease(GameObject clicker)
     {
         //when the object is released
     }
