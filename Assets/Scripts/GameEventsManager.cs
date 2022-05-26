@@ -36,5 +36,15 @@ public class GameEventsManager : MonoBehaviour
         }
     }
 
-    
+    public event Action onGameStart;
+
+    public void GameStart()
+    {
+        if (onGameStart != null)
+        {
+            onGameStart();
+        }
+    }
+
+
 }
