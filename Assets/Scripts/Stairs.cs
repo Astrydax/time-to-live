@@ -20,4 +20,9 @@ public class Stairs : MonoBehaviour
         }
 
     }
+
+    public void OnRelease(GameObject clicker)
+    {
+        //when the object is released
+    }
 }

@@ -99,20 +99,20 @@ public class CursorController : MonoBehaviour
 
         //TODO: check for zero lives
 
-
+        //destroy old ghosts
         PlayerReplayObject[] ghosts = FindObjectsOfType<PlayerReplayObject>();
         foreach (PlayerReplayObject playerReplayObject in ghosts)
         {
             Destroy(playerReplayObject.gameObject);
         }
-        GameEventsManager.instance.GoalReached();
+        GameEventsManager.instance.PlayerRespawned();
         //GameEventsManager.instance.RestartLevel();
         //set camera to base floor
-        Camera.main.transform.position = new Vector3(0, -10, Camera.main.transform.position.z);
+        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
 
-        //destroy old ghosts
         
-        //do this last, possibly call this from the game manager after the world has been reset
+        
+        //already calling this via PlayerRespawnedEvent
         //recorder.StartNewRecording();
         
     }
@@ -131,14 +131,5 @@ public class CursorController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
         return hit;
-    }
-
-    private void ClearClickState()
-    {
-        if(lastClicked != null)
-        {
-            lastClicked.BroadcastMessage("OnRelease");
-            lastClicked = null;
-        }        
-    }
+    }   
 }

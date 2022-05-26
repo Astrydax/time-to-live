@@ -29,7 +29,6 @@ public class ClickStates : MonoBehaviour
             if (hit.collider != null)
             {
                 lastClicked = hit.collider.gameObject;
-                Debug.Log(hit.collider.gameObject.name);
                 hit.collider.gameObject.BroadcastMessage("OnClick", this.gameObject);
             }
 
@@ -71,7 +70,7 @@ public class ClickStates : MonoBehaviour
     {
         if (lastClicked != null)
         {
-            lastClicked.BroadcastMessage("OnRelease");
+            lastClicked.BroadcastMessage("OnRelease", this.gameObject);
             lastClicked = null;
         }
     }
