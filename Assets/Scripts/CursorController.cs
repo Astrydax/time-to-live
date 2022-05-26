@@ -108,7 +108,7 @@ public class CursorController : MonoBehaviour
         GameEventsManager.instance.PlayerRespawned();
         //GameEventsManager.instance.RestartLevel();
         //set camera to base floor
-        Camera.main.transform.position = new Vector3(0, -10, Camera.main.transform.position.z);
+        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
 
         
         
