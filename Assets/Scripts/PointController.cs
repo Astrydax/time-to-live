@@ -19,5 +19,10 @@ public class PointController : MonoBehaviour
 
     }
 
+    public void OnRelease(GameObject clicker)
+    {
+        //when the object is released
+    }
+
    
 }

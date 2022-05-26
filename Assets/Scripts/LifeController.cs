@@ -35,6 +35,13 @@ public class LifeController : MonoBehaviour
     public void LoseLife()
     {
         playerLives--;
+        if(playerLives < 0)
+        {
+            GameManager.instance.gamePlaying = false;
+
+            //add gameover screen handler here, for now just return
+            return;
+        }
         if (loseLifeFX != null)
         {
             lifeImages[playerLives].enabled = false;

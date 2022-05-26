@@ -131,14 +131,5 @@ public class CursorController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
         return hit;
-    }
-
-    private void ClearClickState()
-    {
-        if(lastClicked != null)
-        {
-            lastClicked.BroadcastMessage("OnRelease");
-            lastClicked = null;
-        }        
-    }
+    }   
 }

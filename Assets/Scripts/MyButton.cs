@@ -32,7 +32,7 @@ public class MyButton : MonoBehaviour
 
     }
 
-    public void OnRelease()
+    public void OnRelease(GameObject clicker)
     {
         clickers--;
         //ONLY CALL THIS IF NO CURSORS ARE CLICKING
