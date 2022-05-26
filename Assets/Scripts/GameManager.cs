@@ -67,4 +67,5 @@ public class GameManager : MonoBehaviour
     {
         pointDisplay.text = "Points: " + collectedPoints.ToString();
     }
+
 }
