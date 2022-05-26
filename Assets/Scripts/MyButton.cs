@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyButton : MonoBehaviour
+public class MyButton : ClickableObject
 {
     public GameObject unpressed, pressed;
 
@@ -16,10 +16,9 @@ public class MyButton : MonoBehaviour
 
     }
 
-    public void OnClick(GameObject clicker)
+    public override void OnClick(GameObject clicker)
     {
         clickers++;
-        Debug.Log("You Clicked the button!");
         pressed.SetActive(true);
         unpressed.SetActive(false);
 
@@ -32,13 +31,12 @@ public class MyButton : MonoBehaviour
 
     }
 
-    public void OnRelease(GameObject clicker)
+    public override void OnRelease(GameObject clicker)
     {
         clickers--;
         //ONLY CALL THIS IF NO CURSORS ARE CLICKING
         if(clickers <= 0)
         {
-            Debug.Log("I've been released");
             pressed.SetActive(false);
             unpressed.SetActive(true);
         }   
