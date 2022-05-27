@@ -317,7 +317,8 @@ MonoBehaviour:
   contentSpawnPoint: {fileID: 6039517012180488363}
   opened: {fileID: 834525951546104291}
   unopened: {fileID: 834525951507797288}
-  hitpoints: 100
+  maxHitpoints: 100
+  currentHitpoints: 0
   hitPointText: {fileID: 1281252329}
 --- !u!1 &834525951507797288
 GameObject:
