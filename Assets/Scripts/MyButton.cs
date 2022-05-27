@@ -20,14 +20,7 @@ public class MyButton : ClickableObject
     {
         clickers++;
         pressed.SetActive(true);
-        unpressed.SetActive(false);
-
-        //this is only used for testing, remove before deploy
-        if (clicker.GetComponent<ClickStates>().isAlive && testFlag)
-        {
-            GameEventsManager.instance.PlayerRespawned();
-        }
-        
+        unpressed.SetActive(false);       
 
     }
 
