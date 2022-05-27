@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
 
     public void OnGameStart()
     {
-        GameEventsManager.instance.GameStart();
         mainCamera.transform.position = new Vector3(0, 0, -10);
         gamePlaying = true;
 
