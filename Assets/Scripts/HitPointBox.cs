@@ -10,11 +10,11 @@ public class HitPointBox : Box
 
     [SerializeField] private TMP_Text hitPointText;
 
-    public override void Awake()
+    public override void Start()
     {
         currentHitpoints = maxHitpoints;
         hitPointText.text = currentHitpoints.ToString();
-        base.Awake();
+        base.Start();
     }
     public override void OnClick(GameObject clicker)
     {
@@ -31,6 +31,7 @@ public class HitPointBox : Box
     protected override void OnPlayerRespawn()
     {
         currentHitpoints = maxHitpoints;
+        hitPointText.text = currentHitpoints.ToString();
         hitPointText.enabled = true;
         base.OnPlayerRespawn();
     }

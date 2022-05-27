@@ -15,17 +15,18 @@ public class Box : ClickableObject
     public GameObject opened, unopened;
     protected PolygonCollider2D _collider;
 
-    
 
-    
-     public virtual void Awake()
+
+   
+    public virtual void Start()
     {
         unopened.SetActive(true);
         opened.SetActive(false);
 
         _collider = GetComponent<PolygonCollider2D>();
-
         GameEventsManager.instance.onPlayerRespawn += OnPlayerRespawn;
+
+
 
 
     }
