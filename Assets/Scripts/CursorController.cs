@@ -56,6 +56,7 @@ public class CursorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         lifespanCounter -= Time.deltaTime;
         //lifeSpanSlider.value = lifespanCounter;
         if(lifespanCounter <= 0)
@@ -95,7 +96,12 @@ public class CursorController : MonoBehaviour
 
     private void HandleDeath()
     {
+        if (!GameManager.instance.gamePlaying)
+        {
+            GameEventsManager.instance.GameStart();
+        }
         lifeController.LoseLife();
+        
 
         //TODO: check for zero lives
 

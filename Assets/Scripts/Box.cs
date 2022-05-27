@@ -25,10 +25,6 @@ public class Box : ClickableObject
 
         _collider = GetComponent<PolygonCollider2D>();
         GameEventsManager.instance.onPlayerRespawn += OnPlayerRespawn;
-
-
-
-
     }
 
     private void OnDestroy()

@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text pointDisplay;
     public GameObject[] objectsToReset;
 
+    public GameObject hud;
+    public GameObject startScreenCounter;
+
+    public Box[] guessBoxes;
+    public GameObject guessBoxContent;
+
     public static GameManager instance { get; private set; }
 
     private void Awake()
@@ -46,9 +52,14 @@ public class GameManager : MonoBehaviour
 
 
     public void OnGameStart()
-    {
-        mainCamera.transform.position = new Vector3(0, 0, -10);
+    {        
         gamePlaying = true;
+        hud.SetActive(true);
+        startScreenCounter.SetActive(false);
+
+        int r = Random.Range(0, guessBoxes.Length);
+        guessBoxes[r].contents = guessBoxContent;
+
 
     }
 
