@@ -34,8 +34,8 @@ public class CursorController : MonoBehaviour
         clickStates = GetComponent<ClickStates>();
         clickStates.isAlive = isAlive;
         lifespanCounter = lifespan;
-        lifeSpanSlider.maxValue = lifespan;
-        lifeSpanSlider.minValue = 0;
+       /* lifeSpanSlider.maxValue = lifespan;
+        lifeSpanSlider.minValue = 0;*/
     }
 
     
@@ -57,7 +57,7 @@ public class CursorController : MonoBehaviour
     void Update()
     {
         lifespanCounter -= Time.deltaTime;
-        lifeSpanSlider.value = lifespanCounter;
+        //lifeSpanSlider.value = lifespanCounter;
         if(lifespanCounter <= 0)
         {
             lifespanCounter = lifespan;

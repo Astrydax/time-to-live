@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,22 @@ public class ClickStates : MonoBehaviour
 
     public GameObject clickFX;
 
-    
+
+    void Start()
+    {
+        GameEventsManager.instance.onPlayerRespawn += OnPlayerRespawn;
+    }
+
+    private void OnDestroy()
+    {
+        // unsubscribe from events
+        GameEventsManager.instance.onPlayerRespawn -= OnPlayerRespawn;
+    }
+
+    private void OnPlayerRespawn()
+    {
+        lastClicked = null;
+    }
 
     private void Update()
     {
