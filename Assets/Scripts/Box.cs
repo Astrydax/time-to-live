@@ -53,20 +53,26 @@ public class Box : ClickableObject
         opened.SetActive(true);
 
         
-        ShowContents();
+        ShowContents(clicker);
     }
 
-    public virtual void ShowContents()
+    public virtual void ShowContents(GameObject clicker)
     {
-        //Depening how loop restarting goes in the game manager, we may just swith this to childed objects that are hidden
-        if(contents != null)
+        if (clicker.GetComponent<ClickStates>().isAlive)
         {
-            instantiatedObjectRef = Instantiate(contents, contentSpawnPoint);
-            instantiatedObjectRef.transform.SetParent(null);
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
         }
         
-        
-
+        //Depening how loop restarting goes in the game manager, we may just swith this to childed objects that are hidden
+        if (contents != null)
+        {
+            instantiatedObjectRef = Instantiate(contents, contentSpawnPoint);
+            
+        }    
     }
 
     public override void OnRelease(GameObject clicker)

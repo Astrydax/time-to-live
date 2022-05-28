@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject mainCamera;
     public bool gamePlaying = false;
+    public bool victory = false;
 
     public int collectedPoints = 0;
     public TMP_Text pointDisplay;
+    public TMP_Text victoryPointDisplay;
     public GameObject[] objectsToReset;
 
     public GameObject hud;
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     public Box[] guessBoxes;
     public GameObject guessBoxContent;
+
+    public GameObject victoryScreen;
+    public GameObject gameOverScreen;
 
     public static GameManager instance { get; private set; }
 
@@ -30,7 +35,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
-    {        
+    {
+        Time.timeScale = 1;
         // subscribe to events
         GameEventsManager.instance.onGameStart += OnGameStart;
         GameEventsManager.instance.onPlayerRespawn += OnPlayerRespawn;
@@ -80,6 +86,22 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         pointDisplay.text = "Points: " + collectedPoints.ToString();
+        
+    }
+
+    public void Victory()
+    {
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        victoryPointDisplay.text = "Points: " + collectedPoints.ToString();
+        victoryScreen.SetActive(true);
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        gameOverScreen.SetActive(true);
     }
 
 }

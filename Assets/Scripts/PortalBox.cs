@@ -11,12 +11,12 @@ public class PortalBox : Box
         opened.SetActive(true);
 
 
-        ShowContents();
+        ShowContents(clicker);
         Destroy(this.gameObject);
     }
-    public override void ShowContents()
+    public override void ShowContents(GameObject clicker)
     {
-        base.ShowContents();
+        base.ShowContents(clicker);
         instantiatedObjectRef.transform.SetParent(null);
     }
 

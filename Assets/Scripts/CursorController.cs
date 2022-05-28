@@ -101,9 +101,20 @@ public class CursorController : MonoBehaviour
             GameEventsManager.instance.GameStart();
         }
         lifeController.LoseLife();
-        
 
-        //TODO: check for zero lives
+        if (GameManager.instance.victory == true)
+        {
+            GameManager.instance.Victory();
+            return;
+        }
+        
+        if(lifeController.playerLives < 0)
+        {
+            GameManager.instance.GameOver();
+
+            return;
+        }
+        
 
         //destroy old ghosts
         PlayerReplayObject[] ghosts = FindObjectsOfType<PlayerReplayObject>();
@@ -112,15 +123,8 @@ public class CursorController : MonoBehaviour
             Destroy(playerReplayObject.gameObject);
         }
         GameEventsManager.instance.PlayerRespawned();
-        //GameEventsManager.instance.RestartLevel();
-        //set camera to base floor
-        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
 
-        
-        
-        //already calling this via PlayerRespawnedEvent
-        //recorder.StartNewRecording();
-        
+        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);        
     }
 
     private void LateUpdate()
