@@ -130,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unpressed: {fileID: 687858382490439041}
   pressed: {fileID: 5920508593780406182}
+  isPressed: 0
+  clickers: 0
 --- !u!60 &2695035542178606239
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -156,11 +158,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.0048776865, y: 0.5090642}
-      - {x: -0.31027174, y: 0.35981894}
-      - {x: -0.33051294, y: 0.15191731}
+      - {x: -0.32073504, y: 0.36098152}
+      - {x: -0.32121223, y: 0.14610437}
       - {x: 0.0013384223, y: -0.0078088045}
-      - {x: 0.31678855, y: 0.14143598}
-      - {x: 0.31480289, y: 0.35221952}
+      - {x: 0.3179815, y: 0.14262894}
+      - {x: 0.31841385, y: 0.35583043}
 --- !u!1 &5920508593780406182
 GameObject:
   m_ObjectHideFlags: 0
