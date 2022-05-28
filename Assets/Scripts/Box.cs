@@ -9,6 +9,7 @@ public class Box : ClickableObject
     [Header("Object To Spawn")]
     public GameObject contents;
     protected GameObject instantiatedObjectRef;
+    public bool destoryContentsOnLoop = true;
 
     [Header("Used by prefab")]
     [SerializeField] private Transform contentSpawnPoint;
@@ -38,7 +39,11 @@ public class Box : ClickableObject
         _collider.enabled = true;
         unopened.SetActive(true);
         opened.SetActive(false);
-        Destroy(instantiatedObjectRef);
+        if (destoryContentsOnLoop)
+        {
+            Destroy(instantiatedObjectRef);
+        }
+        
     }
 
     public override void OnClick(GameObject clicker)
@@ -51,12 +56,13 @@ public class Box : ClickableObject
         ShowContents();
     }
 
-    private void ShowContents()
+    public virtual void ShowContents()
     {
         //Depening how loop restarting goes in the game manager, we may just swith this to childed objects that are hidden
         if(contents != null)
         {
             instantiatedObjectRef = Instantiate(contents, contentSpawnPoint);
+            instantiatedObjectRef.transform.SetParent(null);
         }
         
         

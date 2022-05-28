@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour
 
     public void OnGameStart()
     {        
+        if(gamePlaying == true)
+        {
+            return;
+        }
         gamePlaying = true;
         hud.SetActive(true);
         startScreenCounter.SetActive(false);

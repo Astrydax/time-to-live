@@ -5,17 +5,18 @@ using UnityEngine;
 public class Stairs : ClickableObject
 {
     public bool isUp = true;
+    public int shiftAmount = 10;
     public override void OnClick(GameObject clicker)
     {
         if (clicker.GetComponent<ClickStates>().isAlive)
         {
             if (isUp)
             {
-                Camera.main.GetComponent<CameraController>().GoUp();
+                Camera.main.GetComponent<CameraController>().GoUp(shiftAmount);
             }
             else
             {
-                Camera.main.GetComponent<CameraController>().GoDown();
+                Camera.main.GetComponent<CameraController>().GoDown(shiftAmount);
             }
         }
 
