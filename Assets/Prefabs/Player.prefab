@@ -186,7 +186,7 @@ MonoBehaviour:
   clickStates: {fileID: 0}
   firstName: 
   sprite: {fileID: 21300000, guid: 47cb1ed0f06237d478edbe759c4dd404, type: 3}
-  lifespan: 7.68
+  lifespan: 15.36
   lifespanCounter: 0
   lifeSpanSlider: {fileID: 0}
   nameTag: {fileID: 1420160089280865876}
@@ -221,6 +221,7 @@ MonoBehaviour:
   holdingClick: 1
   endedClick: 0
   isAlive: 0
+  lastClicked: {fileID: 0}
   clickFX: {fileID: 7108591991025362461, guid: d25060fa138a8254ca516232caf35388, type: 3}
 --- !u!114 &917930074580321208
 MonoBehaviour:
@@ -246,6 +247,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  loseLifeFX: {fileID: 2328029348853301357, guid: 596b3eb3352ab354987a69da95b708d5, type: 3}
 --- !u!1 &2375712945273402567
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3177830061915261170
 RectTransform:
   m_ObjectHideFlags: 0

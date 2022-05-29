@@ -7,7 +7,7 @@ public class CountDownController : MonoBehaviour
 {
 
     public CursorController cc;
-    public TMP_Text text;
+    private TMP_Text text;
     // Start is called before the first frame update
     void Start()
     {

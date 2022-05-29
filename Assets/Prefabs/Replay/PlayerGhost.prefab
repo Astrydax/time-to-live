@@ -50,6 +50,7 @@ MonoBehaviour:
   holdingClick: 0
   endedClick: 0
   isAlive: 0
+  lastClicked: {fileID: 0}
   clickFX: {fileID: 7108591991025362461, guid: d25060fa138a8254ca516232caf35388, type: 3}
 --- !u!114 &7563871473966869281
 MonoBehaviour:
@@ -80,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7950232327944200373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 47cb1ed0f06237d478edbe759c4dd404, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8000001, g: 0.6784314, b: 0.74509805, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -297,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3814832120040871472
 RectTransform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class Box : ClickableObject
     [Header("Object To Spawn")]
     public GameObject contents;
     protected GameObject instantiatedObjectRef;
+    public bool destoryContentsOnLoop = true;
 
     [Header("Used by prefab")]
     [SerializeField] private Transform contentSpawnPoint;
@@ -25,10 +26,6 @@ public class Box : ClickableObject
 
         _collider = GetComponent<PolygonCollider2D>();
         GameEventsManager.instance.onPlayerRespawn += OnPlayerRespawn;
-
-
-
-
     }
 
     private void OnDestroy()
@@ -42,7 +39,11 @@ public class Box : ClickableObject
         _collider.enabled = true;
         unopened.SetActive(true);
         opened.SetActive(false);
-        Destroy(instantiatedObjectRef);
+        if (destoryContentsOnLoop)
+        {
+            Destroy(instantiatedObjectRef);
+        }
+        
     }
 
     public override void OnClick(GameObject clicker)
@@ -52,19 +53,26 @@ public class Box : ClickableObject
         opened.SetActive(true);
 
         
-        ShowContents();
+        ShowContents(clicker);
     }
 
-    private void ShowContents()
+    public virtual void ShowContents(GameObject clicker)
     {
-        //Depening how loop restarting goes in the game manager, we may just swith this to childed objects that are hidden
-        if(contents != null)
+        if (clicker.GetComponent<ClickStates>().isAlive)
         {
-            instantiatedObjectRef = Instantiate(contents, contentSpawnPoint);
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
         }
         
-        
-
+        //Depening how loop restarting goes in the game manager, we may just swith this to childed objects that are hidden
+        if (contents != null)
+        {
+            instantiatedObjectRef = Instantiate(contents, contentSpawnPoint);
+            
+        }    
     }
 
     public override void OnRelease(GameObject clicker)

@@ -30,7 +30,15 @@ public class MyButton : ClickableObject
 
     public override void OnClick(GameObject clicker)
     {
-        clickers++;       
+        clickers++;
+        if (clicker.GetComponent<ClickStates>().isAlive)
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+        }
 
     }
 
