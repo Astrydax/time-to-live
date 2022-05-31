@@ -9916,6 +9916,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 567970680, guid: 925a2cca4b052024f93b3d5cfc845923, type: 3}
+      propertyPath: lifespan
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 917930074580321208, guid: 925a2cca4b052024f93b3d5cfc845923, type: 3}
       propertyPath: playerLives
       value: 10
