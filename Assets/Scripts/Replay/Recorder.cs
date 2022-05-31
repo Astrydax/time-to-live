@@ -64,6 +64,7 @@ public class Recorder : MonoBehaviour
         // check if we're finished, so we can restart
         if (!hasMoreFrames)
         {
+            //not using for now
             //RestartReplay();
         }
     }
@@ -96,7 +97,7 @@ public class Recorder : MonoBehaviour
     private void RestartReplay()
     {
         isDoingReplay = true;
-        // restart our queued data from the beginning
+        // restart queued data from the beginning
         foreach (Recording recording in recordings)
         {
             recording.RestartFromBeginning();
